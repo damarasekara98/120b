@@ -22,7 +22,7 @@ unsigned char tempB = 0x00;//for PA1
 tempA = PINA & 0x01;
 tempB = PINA & 0x02;
 
-	if(tempA==0x01 & tempB==0){
+	if(tempA==0x01 & tempB==0x00){
 	PORTB=0x01;
 		
 }
