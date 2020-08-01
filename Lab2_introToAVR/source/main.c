@@ -11,14 +11,21 @@
 #ifdef _SIMULATE_
 #include "simAVRHeader.h"
 #endif
-
 int main(void) {
-    /* Insert DDR and PORT initializations */
-DORB =0xFF;//Configure prot B's 8 pins as outputs
-PORTB=0x00;//Initiallize portB output to 0'x
-    /* Insert your solution below */
+ 
+DDRA = 0x00;PORTA = 0xFF;//initialize port A as inputs
+DDRB = 0xFF;PORTB = 0x00;//initialize por tB as outputs
+unsigned char tempA = 0x00;//for PA0
+unsigned char tempB = 0x00;//for PA1
+    
     while (1) {
-PORTB=0x0f;//Writes port B's 8 pins with 00001111
+tempA = PINA & 0x01;
+tempB = PINA & 0x02;
+
+	if(tempA==0x01 & tempB==0){
+	PORTB=0x01;
+		
+}
 } 
 return 1;
 } 
